@@ -127,9 +127,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Czytaj to.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Przykłady\HYDRO\HYDRO.SQL">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OPGK Olsztyn")]
 [assembly: AssemblyProduct("QueryManager")]
-[assembly: AssemblyCopyright("Copyright © OPGK Olsztyn 2013-2015")]
+[assembly: AssemblyCopyright("Copyright © Damian Hintz 2013-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
