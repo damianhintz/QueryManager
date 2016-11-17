@@ -76,11 +76,7 @@
     <Content Include="test_szukaj.xml" />
     <Content Include="test_zapisz.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="HYDRO\" />
-    <Folder Include="TBD\" />
-    <Folder Include="VMAP\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

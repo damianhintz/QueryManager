@@ -1,0 +1,10 @@
+[
+  {
+    nazwa: "Granicznik_PZB030",
+    sql: "UPDATE Granicznik_PZB030 SET NAM = UCASE(NAM) WHERE NAM IS NOT NULL AND STRCOMP(NAM,'UNK',0) &lt;&gt; 0 AND STRCOMP(NAM,UCASE(NAM),0) &lt;&gt; 0;"
+  },
+  {
+    nazwa: "Jaskinia_gr_PDB030",
+    sql: "UPDATE Jaskinia_gr_PDB030 SET NAM = UCASE(NAM) WHERE NAM IS NOT NULL AND STRCOMP(NAM,'UNK',0) &lt;&gt; 0 AND STRCOMP(NAM,UCASE(NAM),0) &lt;&gt; 0;"
+  }
+]
