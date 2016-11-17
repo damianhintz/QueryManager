@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Numer />
+    <Nazwa>kwerenda1</Nazwa>
+    <Opis>opis kwerendy1</Opis>
+    <Sql>select * from test</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer />
+    <Nazwa>kwerenda2</Nazwa>
+    <Opis>opis kwerendy2</Opis>
+    <Sql>select * from test</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer />
+    <Nazwa>kwerenda3</Nazwa>
+    <Opis>opis kwerendy3</Opis>
+    <Sql>select * from test</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

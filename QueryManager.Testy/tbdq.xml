@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Nazwa>BDOT_ADMS_zr_danych_A_PRNG</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_ADMS_A SET OT_ADMS_A.x_zrodloDanychA = 'PRNG';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_rodzaj_miejsc_Inn_na_Prz</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_ADMS_A SET OT_ADMS_A.rodzaj = 'Prz'
+WHERE [OT_ADMS_A].[rodzaj]='Inn';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_BUCM_wyznanie_0</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_BUCM_A SET OT_BUCM_A.wyznanie = '0';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_material_BUZM_Gr</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_BUZM_L SET OT_BUZM_L.material = 'Gr';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_usun_gatunki</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>DELETE [OT_PTLZ_A_GD].[gatunekDrzew]
+FROM OT_PTLZ_A_GD;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_uwaga_o_LMN</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_PTLZ_A SET OT_PTLZ_A.x_uwagi = 'brak danych w LMN'
+WHERE [OT_PTLZ_A].[x_uwagi] Is Null;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_ruch_row_dopuszcz</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_SKRP_L SET ruchRowerowy = 'Dps';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_SUPR_srPrzewodu_templ</Nazwa>
+    <Opis>na początku</Opis>
+    <Sql>UPDATE OT_SUPR_L SET OT_SUPR_L.srPrzewodu = 'template'
+WHERE [OT_SUPR_L].[srPrzewodu] is null;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Nazwa>BDOT_usun_x_uwagi_jesli_gat_drzew</Nazwa>
+    <Opis>zawsze</Opis>
+    <Sql>UPDATE OT_PTLZ_A INNER JOIN OT_PTLZ_A_GD ON [OT_PTLZ_A].[id]=[OT_PTLZ_A_GD].[id] SET OT_PTLZ_A.x_uwagi = ''
+WHERE ((([OT_PTLZ_A_GD].[gatunekDrzew]) Is Not Null And ([OT_PTLZ_A_GD].[gatunekDrzew]&lt;&gt;'template')));</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

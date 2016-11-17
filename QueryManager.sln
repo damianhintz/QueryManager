@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryManager.Domena", "QueryManager.Domena\QueryManager.Domena.csproj", "{3DB20168-FB2B-4ED3-B4C8-CF77F2989664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryManager", "QueryManager\QueryManager.csproj", "{A2E89077-3CBC-4196-9F43-62CF16A90761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryManager.Testy", "QueryManager.Testy\QueryManager.Testy.csproj", "{20F2ED04-F6B8-4CCF-B6E0-0C2461652BC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DB20168-FB2B-4ED3-B4C8-CF77F2989664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB20168-FB2B-4ED3-B4C8-CF77F2989664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB20168-FB2B-4ED3-B4C8-CF77F2989664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB20168-FB2B-4ED3-B4C8-CF77F2989664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E89077-3CBC-4196-9F43-62CF16A90761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E89077-3CBC-4196-9F43-62CF16A90761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E89077-3CBC-4196-9F43-62CF16A90761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E89077-3CBC-4196-9F43-62CF16A90761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F2ED04-F6B8-4CCF-B6E0-0C2461652BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F2ED04-F6B8-4CCF-B6E0-0C2461652BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F2ED04-F6B8-4CCF-B6E0-0C2461652BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F2ED04-F6B8-4CCF-B6E0-0C2461652BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

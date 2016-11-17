@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2E89077-3CBC-4196-9F43-62CF16A90761}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QueryManager</RootNamespace>
+    <AssemblyName>QueryManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sql.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Polecenia\ImportujKwerendyPolecenie.cs" />
+    <Compile Include="Widok\BazaListViewItem.cs" />
+    <Compile Include="Widok\EdytorBazy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widok\EdytorBazy.Designer.cs">
+      <DependentUpon>EdytorBazy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widok\EdytorKwerendy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Widok\EdytorKwerendy.Designer.cs">
+      <DependentUpon>EdytorKwerendy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widok\KwerendaListViewItem.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Polecenia\AbstrakcyjnePolecenie.cs" />
+    <Compile Include="Polecenia\EdytorPolecenie.cs" />
+    <Compile Include="Polecenia\InformacjePolecenie.cs" />
+    <Compile Include="Polecenia\NowaKwerendaPolecenie.cs" />
+    <Compile Include="Polecenia\NowyPlikPolecenie.cs" />
+    <Compile Include="Polecenia\OtwórzPolecenie.cs" />
+    <Compile Include="Polecenia\UsuńPolecenie.cs" />
+    <Compile Include="Polecenia\WykonajPolecenie.cs" />
+    <Compile Include="Polecenia\ZakończPolecenie.cs" />
+    <Compile Include="Polecenia\ZamknijPolecenie.cs" />
+    <Compile Include="Polecenia\ZapiszPolecenie.cs" />
+    <Compile Include="Polecenia\ZapiszJakoPolecenie.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Widok\EdytorBazy.resx">
+      <DependentUpon>EdytorBazy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widok\EdytorKwerendy.resx">
+      <DependentUpon>EdytorKwerendy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Przykłady\VMAP\n33058cd_v4.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Przykłady\VMAP\SQL\vmap_nam.cmd" />
+    <None Include="Przykłady\VMAP\SQL\vmap_txt.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QueryManager.Domena\QueryManager.Domena.csproj">
+      <Project>{3db20168-fb2b-4ed3-b4c8-cf77f2989664}</Project>
+      <Name>QueryManager.Domena</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Czytaj to.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Przykłady\HYDRO\HYDRO.SQL">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Przykłady\VMAP\Schemat\Bagno_trzes_ABH095.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Bagno_trzes_PBH095.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Bocznica_sl_LAN050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Brod_L_LBH070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Brod_P_PBH070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Brzeg_plaza_LBA050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Charakterys_LBH142.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Charakterys_PBH142.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Cmentarz_A_AAL030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Cmentarz_P_PAL030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Cysterna_zb_AAM070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Cysterna_zb_PAM070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Droga_polna_LAP010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Droga_start_AGB055.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Droga_start_LGB055.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Drzewo_P_PEC030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Dukt_pas_oc_AEC040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Dukt_pas_oc_LEC040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Dzwig_zuraw_PAF040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Elewator_zb_AAM030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Elewator_zb_PAM030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Falochron_o_LBB040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Fortyfikacj_AAH050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Fortyfikacj_PAH050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GAliasTable.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GCoordSystem.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GeometryProperties.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GFeatures.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GPickListTable.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\GSQLOperatorTable.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\ModificationLog.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Geomedia\ModifiedTables.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Halda_zwal_AAM040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Halda_zwal_PAM040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Int_szlaki_jezdne.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Izobata_L_LBE015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kemping_let_AAK060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kierunek_pr_PBG010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kolej_L_LAN010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Komin_P_PAF010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kopiec_kurh_PAL025.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kotwicowisk_ABB010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Kotwicowisk_PBB010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Krzewy_koso_AEB020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Krzewy_koso_PEB020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Krzyz_przyd_PAL116.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Latarnia_P_PBC050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Linia_przes_LAT030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Magazyn_skl_AAM010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Metadane.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Miejsce_odp_AAB000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Mielizna_A_ABD000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Mielizna_P_PBD000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Most_wiaduk_LAQ040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Mur_ogrodze_LAL260.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Granicznik_PZB030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Jaskinia_gr_PDB030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Kolejka_lin_LAT041.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Las_A_AEC015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Morze_woda_ABA040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Park_A_AAK120.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Poligon_A_AFA165.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Port_lotnic_AGB005.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Port_lotnic_PGB005.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Przelecz_P_PDB150.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Punkt_osnow_PZB060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Rezerwat_pr_AAL005.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Rezerwuar_z_ABH130.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Silownia_el_AAD010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Silownia_el_PAD010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Skala_wyspa_PBD130.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Stadion_amf_AAK160.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Stadion_amf_PAK160.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Szosa_droga_LAP030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Wawoz_L_LDB200.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Weryfikacja_terenowa.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Wieza_telek_PAT080.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Wodospad_L_LBH180.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Wodospad_P_PBH180.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Wyspa_A_ABA030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Zapora_budo_LBI020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM\Zapora_budo_PBI020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Jezioro_sta_ABH080.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Kanal_row_A_ABH020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Kanal_row_L_LBH020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Rzeka_strum_ABH140.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Rzeka_strum_LBH140.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_SNM\Teren_zabud_AAL020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NAM_TXT\Kopalnia_A_AAA010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NM\Granica_adm_LFA000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\NM\Obszar_admi_AFA001.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Obnizenie_d_LDB080.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Obnizenie_d_PDB080.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Obrotnica_k_PAN075.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Obszar_zale_ABH090.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Ogrodzenie_LAL070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Parking_A_AAQ140.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Parking_P_PAQ140.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Pas_drzew_z_LEA020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Piarg_osypi_PDB210.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Pirs_nabrze_LBB190.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Plawa_P_PBC020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Plyta_lotni_AGB015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Podpora_slu_PAT040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Podstacja_e_AAD030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Podstacja_e_PAD030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Pomnik_P_PAL130.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Przeprawa_p_LAQ070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Przeprawa_p_PAQ070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Punkt_wysok_PCA030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Punkt_wysok_PCA035.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Roslinnosc_AEB010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Rurociag_L_LAQ113.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Sad_plantac_AEA040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Sitowie_trz_AEC010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Sitowie_trz_PEC010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Skladnik_po_ADA010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Skocznia_na_PAK150.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Slup_kilome_PAQ100.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Stacja_rozr_AAN060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Stacja_rozr_PAN060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Strome_nach_PAQ120.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Sygnal_swie_PBC040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Szczelina_p_ADB060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Szczelina_p_LDB060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Szlaki_drogowe.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Szlak_sciez_LAP050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Szyb_wiertn_PAA051.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAA010_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAA010_PRO.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAA013_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAA013_PRO.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAC000_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAC000_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAD010_PPC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAH050_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAH050_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAK120_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL015_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL015_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL015_HWT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL015_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL020_BAC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL020_US2.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL020_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAL030_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAM020_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAM030_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAM070_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AAN060_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH020_HYC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH020_OPS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH080_HYC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH095_TRA.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH130_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH140_HYC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ABH140_OPS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\ADA010_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEA010_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEA040_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEB020_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEC015_TRE.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEC015_VE2.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AEC015_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AFA001_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AFA165_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB005_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB005_TAP.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB005_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB015_RST.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB055_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\AGB055_RST.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\Kontrola_NRK.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\Kontrola_TYP.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN010_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN010_LOC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN010_RGC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN010_RRA.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN010_RRC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN050_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN050_RGC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN050_RRA.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAN050_RSA.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_LOC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_RST.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_RTT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAP030_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ010_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_BOT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_BVC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_MC3.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ040_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ070_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ070_FER.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ070_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ113_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ113_LOC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ113_PRO.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ130_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAQ130_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAT030_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LAT041_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBA050_SLT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH020_HAT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH020_HYC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH020_OPS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH020_WWR.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH070_UMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH140_HAT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH140_HYC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH140_OPS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH140_WWR.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBH142_UMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBI020_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBI020_MC4.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBI020_MC5.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LBI020_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LCA010_HQC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LDB090_CET.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LDB090_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LDB090_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LDB200_WWG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LFA000_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LGB055_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\LGB055_RST.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAA013_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAA013_PRO.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAA051_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAA051_PRO.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAC000_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAC000_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAD010_PPC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAF010_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAF030_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAH050_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAH050_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAJ050_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL015_BFC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL015_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL015_HWT.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL015_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL030_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL240_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL240_TTC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAL510_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAM020_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAM030_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAM070_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAN060_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAQ070_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAQ070_FER.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAQ070_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAQ090_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAQ090_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAT040_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAT080_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PAT080_NST.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBC050_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBD130_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBD130_VRR.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBH070_UMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBH142_UMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI010_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI020_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI020_MC4.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI020_MC5.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI020_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PBI040_TUC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PCA030_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PDB000_LOC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PDB150_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PDB510_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PDB510_MCC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PEC030_LMC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PEC030_VEG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PGB005_EXS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PGB005_TAP.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PGB005_USG.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PZB060_CPA.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PZB060_CSC.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\PZB060_PSP.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_AE_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_BD_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_CU_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_EL_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_GE_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_HY_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_IN_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_PS_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_TR_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\TZD040_VG_INS.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Słowniki\WER_TER.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Torfowisko_ABH015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Tor_wodny_L_LBE040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Tunel_L_LAQ130.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Budynek_A_AAL015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Budynek_P_PAL015.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Kontrola.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Odkrywka_ka_AAA013.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Odkrywka_ka_PAA013.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_ae_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_bd_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_cu_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_el_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_ge_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_hy_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_in_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_ps_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_tr_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Opis_text_vg_TZD040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Teren_upraw_AEA010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Zaklad_prze_AAC000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\TXT\Zaklad_prze_PAC000.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Umocnienie_LBB230.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Urwisko_kli_LDB010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wal_nasyp_L_LDB090.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Warstwica_L_LCA010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wejscie_wyj_PAQ090.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wiatrak_P_PAJ050.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wielki_glaz_PDB510.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wieza_chlod_PAF030.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wieza_niete_PAL240.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wodorosty_P_PBD060.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wodowskaz_P_PBG020.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wrota_sluzy_PBI040.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wyciag_stat_LBB240.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Wykop_L_LDB070.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Zagroda_nie_PAL510.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Zbiornik_wo_PBI010.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Zoo_ogrod_b_AAK180.sql" />
+    <Content Include="Przykłady\VMAP\Schemat\Zrodlo_P_PBH170.sql" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_nam.sql" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_nam.txt" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_nam_snm.txt" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_nam_txt.txt" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_nm.txt" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_txt.sql" />
+    <Content Include="Przykłady\VMAP\SQL\vmap_txt.txt" />
+    <Content Include="SQL\HYDRO.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\TBD.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql.ico" />
+    <Content Include="SQL\VMAP.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Przykłady\TBD\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
