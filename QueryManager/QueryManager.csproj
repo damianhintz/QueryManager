@@ -473,14 +473,14 @@
     <Content Include="Przykłady\VMAP\SQL\vmap_nm.txt" />
     <Content Include="Przykłady\VMAP\SQL\vmap_txt.sql" />
     <Content Include="Przykłady\VMAP\SQL\vmap_txt.txt" />
-    <Content Include="SQL\HYDRO.xml">
+    <Content Include="Przykłady\HYDRO.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SQL\TBD.xml">
+    <Content Include="Przykłady\TBD.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="sql.ico" />
-    <Content Include="SQL\VMAP.xml">
+    <Content Include="Przykłady\VMAP.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
