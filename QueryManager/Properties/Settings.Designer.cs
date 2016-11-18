@@ -25,10 +25,10 @@ namespace QueryManager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SQL\\HYDRO.xml")]
-        public string Konfiguracja {
+        [global::System.Configuration.DefaultSettingValueAttribute("Samples\\HYDRO\\HYDRO.xml")]
+        public string DefaultRepo {
             get {
-                return ((string)(this["Konfiguracja"]));
+                return ((string)(this["DefaultRepo"]));
             }
         }
     }

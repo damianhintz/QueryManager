@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using QueryManager.Domena.Encje;
 using QueryManager.Domena;
 
 namespace QueryManager.Widok

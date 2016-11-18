@@ -3,6 +3,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using QueryManager.Domena;
+using QueryManager.Domena.Encje;
 
 namespace QueryManager.Polecenia
 {

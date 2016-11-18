@@ -6,6 +6,8 @@ using QueryManager.Properties;
 using QueryManager.Domena;
 using QueryManager.Widok;
 using QueryManager.Polecenia;
+using QueryManager.Domena.Repozytoria;
+using QueryManager.Domena.Encje;
 
 namespace QueryManager
 {
@@ -195,7 +197,7 @@ namespace QueryManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string domyślnyPlik = Settings.Default.Konfiguracja;
+            string domyślnyPlik = Settings.Default.DefaultRepo;
             if (!Path.IsPathRooted(domyślnyPlik)) domyślnyPlik = Path.Combine(Application.StartupPath, domyślnyPlik);
             if (!string.IsNullOrEmpty(domyślnyPlik)) _otwórz.Wczytaj(domyślnyPlik);
         }

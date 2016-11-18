@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-
+using QueryManager.Domena.Repozytoria;
 using QueryManager.Domena;
+using QueryManager.Domena.Encje;
+using QueryManager.Domena.Repozytoria.Xml;
 
 namespace QueryManager.Testy
 {
@@ -17,14 +19,17 @@ namespace QueryManager.Testy
             var rep = new RepozytoriumKwerend();
             foreach (var k in kwerendy) rep.Dodaj(k);
             var path = Path.Combine(_katalogTestow, nazwa);
-            RepozytoriumReader.Zapisz(path, rep);
+            var writer = new KwerendyXmlWriter(rep);
+            writer.ZapiszZmiany(path);
         }
 
         RepozytoriumKwerend GetRepozytorium(string nazwa)
         {
             var rep = new RepozytoriumKwerend();
             var path = Path.Combine(_katalogTestow, nazwa);
-            return RepozytoriumReader.Wczytaj(path);
+            var reader = new KwerendyXmlReader(rep);
+            reader.Wczytaj(path);
+            return rep;
         }
 
         [TestMethod]

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using QueryManager.Domena;
+using QueryManager.Domena.Repozytoria;
+using QueryManager.Domena.Repozytoria.Xml;
 
 namespace QueryManager.Polecenia
 {
@@ -30,8 +32,9 @@ namespace QueryManager.Polecenia
             if (result != DialogResult.OK) return;
             string fileName = _saveFileDialog.FileName;
 
-            RepozytoriumKwerend repozytoriumKwerend = new RepozytoriumKwerend();
-            RepozytoriumReader.Zapisz(fileName, repozytoriumKwerend);
+            var repozytoriumKwerend = new RepozytoriumKwerend();
+            var writer = new KwerendyXmlWriter(repozytoriumKwerend);
+            writer.ZapiszZmiany(fileName);
 
             _form.PrzygotujNoweRepozytorium(fileName, repozytoriumKwerend);
 

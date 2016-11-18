@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-
+using QueryManager.Domena.Repozytoria;
 using QueryManager.Domena;
+using QueryManager.Domena.Repozytoria.Xml;
 
 namespace QueryManager.Polecenia
 {
@@ -26,7 +27,8 @@ namespace QueryManager.Polecenia
             DialogResult result = _saveFileDialog.ShowDialog(_form);
             if (result != DialogResult.OK) return;
 
-            RepozytoriumReader.Zapisz(_saveFileDialog.FileName, _form.Repozytorium);
+            var writer = new KwerendyXmlWriter(_form.Repozytorium);
+            writer.ZapiszZmiany(_saveFileDialog.FileName);
             _form.PrzygotujNoweRepozytorium(_saveFileDialog.FileName, _form.Repozytorium);
 
             _form.EnableZapisz(false);

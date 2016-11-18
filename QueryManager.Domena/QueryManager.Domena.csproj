@@ -42,11 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BazaDanych.cs" />
-    <Compile Include="RepozytoriumReader.cs" />
-    <Compile Include="Kwerenda.cs" />
+    <Compile Include="Abstrakcje\IKwerendyWriter.cs" />
+    <Compile Include="Abstrakcje\IKwerendyReader.cs" />
+    <Compile Include="Encje\BazaDanych.cs" />
+    <Compile Include="Repozytoria\Xml\KwerendyXmlWriter.cs" />
+    <Compile Include="Repozytoria\Xml\KwerendyXmlReader.cs" />
+    <Compile Include="Encje\Kwerenda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepozytoriumKwerend.cs" />
+    <Compile Include="Repozytoria\RepozytoriumKwerend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repozytoria\Text\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

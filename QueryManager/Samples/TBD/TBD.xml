@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Numer>1</Numer>
+    <Nazwa>P01_ADMS_zr_danych_A=PRNG</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_ADMS_A SET OT_ADMS_A.x_zrodloDanychA = 'PRNG';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>10</Numer>
+    <Nazwa>P02_SKRP_szer_GrGz=inap</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKRP_L SET OT_SKRP_L.szerokosc = 'inapplicable' WHERE ((([OT_SKRP_L].[materialNawierzchni])='Gr' Or ([OT_SKRP_L].[materialNawierzchni])='Gz') And (([OT_SKRP_L].[klasaCiaguRuchuPieszego])='Ap'));</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>11</Numer>
+    <Nazwa>P03_BUCM_wyznanie=0</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_BUCM_A SET OT_BUCM_A.wyznanie = '0';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>12</Numer>
+    <Nazwa>P04_BUZM_material=Gr</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_BUZM_L SET OT_BUZM_L.material = 'Gr';</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>13</Numer>
+    <Nazwa>P05_BUIN_konstrukcja=Inn</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_BUIN_L SET OT_BUIN_L.konstrukcja = "Inn"
+WHERE (((OT_BUIN_L.konstrukcja) Is Null) AND ((OT_BUIN_L.rodzaj)&lt;&gt;"d" And (OT_BUIN_L.rodzaj)&lt;&gt;"p" And (OT_BUIN_L.rodzaj)&lt;&gt;"t"));</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>14</Numer>
+    <Nazwa>P06_BUIN_mat_podpor=Zb</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_BUIN_L SET OT_BUIN_L.materialKonstrukcyjnyPodpor = "Zb"
+WHERE (((OT_BUIN_L.materialKonstrukcyjnyPodpor) Is Null) AND ((OT_BUIN_L.rodzaj)&lt;&gt;"d" And (OT_BUIN_L.rodzaj)&lt;&gt;"p" And (OT_BUIN_L.rodzaj)&lt;&gt;"t"));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>15</Numer>
+    <Nazwa>P07_BUIN_mat_pomost=Zb</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_BUIN_L SET OT_BUIN_L.materialKonstrukcyjnyPomostu = "Zb"
+WHERE ((([OT_BUIN_L].[materialKonstrukcyjnyPomostu]) Is Null) And (([OT_BUIN_L].[rodzaj])&lt;&gt;"d" And ([OT_BUIN_L].[rodzaj])&lt;&gt;"p" And ([OT_BUIN_L].[rodzaj])&lt;&gt;"t"));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>16</Numer>
+    <Nazwa>P08_PTLZ_gatunek=template</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_PTLZ_A LEFT JOIN OT_PTLZ_A_GD ON OT_PTLZ_A.[id] = OT_PTLZ_A_GD.[id] SET OT_PTLZ_A_GD.gatunekDrzew = 'template', OT_PTLZ_A_GD.id = [OT_PTLZ_A].[id]
+WHERE (((OT_PTLZ_A_GD.gatunekDrzew) Is Null) AND ((OT_PTLZ_A_GD.id) Is Null));
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>17</Numer>
+    <Nazwa>P09_PTLZ_x_uwagi_o_LMN</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_PTLZ_A SET OT_PTLZ_A.x_uwagi = 'brak danych w LMN'
+WHERE [OT_PTLZ_A].[x_uwagi] Is Null;
+
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>18</Numer>
+    <Nazwa>P10_ADMS_rodzaj_miejsc=Prz</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_ADMS_A SET OT_ADMS_A.rodzaj = 'Prz'
+WHERE [OT_ADMS_A].[rodzaj]='Inn';
+
+
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>19</Numer>
+    <Nazwa>P11_SKRP_nawierz_Sc=null</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKRP_L SET OT_SKRP_L.materialNawierzchni = ''
+WHERE ((([OT_SKRP_L].[klasaCiaguRuchuPieszego])="Sc"));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>20</Numer>
+    <Nazwa>P12_SKRP_ruch_row=dopuszcz</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKRP_L SET ruchRowerowy = 'Dps';
+
+
+
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>21</Numer>
+    <Nazwa>P13_SUPR_srPrzewodu=templ</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SUPR_L SET OT_SUPR_L.srPrzewodu = 'template'
+WHERE OT_SUPR_L.srPrzewodu Is Null;
+
+
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>22</Numer>
+    <Nazwa>P14_PTLZ_gatunki_usun</Nazwa>
+    <Opis />
+    <Sql>DELETE [OT_PTLZ_A_GD].[gatunekDrzew]
+FROM OT_PTLZ_A_GD;
+
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>40</Numer>
+    <Nazwa>K01_ADJA_nazwa_aktualizacja</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_ADJA_A INNER JOIN jednostki_adm ON OT_ADJA_A.idPRG = jednostki_adm.id_prg SET OT_ADJA_A.nazwa = [jednostki_adm].[nazwa], OT_ADJA_A.idTerytJednostkiNadrzednej = [jednostki_adm].[id_teryt_nad], OT_ADJA_A.idTerytTerc = [jednostki_adm].[id_teryt_adm];
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>41</Numer>
+    <Nazwa>K02_ADMS_nazwa_aktualizacja</Nazwa>
+    <Opis />
+    <Sql>UPDATE miejscowosci INNER JOIN OT_ADMS_A ON [miejscowosci].[id_prng]=[OT_ADMS_A].[idPRNG] SET OT_ADMS_A.idTerytMiejsc = [miejscowosci].[idTerytMiejsc], OT_ADMS_A.idTerytGmi = [miejscowosci].[id_teryt_adm], OT_ADMS_A.nazwa = [miejscowosci].[nazwa];
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>42</Numer>
+    <Nazwa>K03_SKJZ_szer_kor=inap</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKJZ_L SET OT_SKJZ_L.szerKoronyDrogi = 'inapplicable'
+WHERE [OT_SKJZ_L].[liczbaJezdniDrogi]='2' Or [OT_SKJZ_L].[liczbaJezdniDrogi]&gt;'2';
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>43</Numer>
+    <Nazwa>K04_PTLZ_x_uwagi=null_dla_gat</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_PTLZ_A INNER JOIN OT_PTLZ_A_GD ON [OT_PTLZ_A].[id]=[OT_PTLZ_A_GD].[id] SET OT_PTLZ_A.x_uwagi = ''
+WHERE ((([OT_PTLZ_A_GD].[gatunekDrzew]) Is Not Null And ([OT_PTLZ_A_GD].[gatunekDrzew]&lt;&gt;'template')));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>44</Numer>
+    <Nazwa>K05_SWRM_szer_inappl</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SWRM_L SET OT_SWRM_L.szerokosc = 'inapplicable'
+WHERE (((OT_SWRM_L.szerokosc) Is Null)) OR (((OT_SWRM_L.polozenie)='-1')) OR (((OT_SWRM_L.x_rodzajReprGeom)='SL'));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>49</Numer>
+    <Nazwa>K10_PTLZ_gatunek_usun_duplikaty</Nazwa>
+    <Opis />
+    <Sql>DELETE [OT_PTLZ_A_GD].[id], [OT_PTLZ_A_GD].[gatunekDrzew], Count([OT_PTLZ_A_GD].[id]) AS PoliczOfid, Count([OT_PTLZ_A_GD].[gatunekDrzew]) AS PoliczOfgatunekDrzew
+FROM OT_PTLZ_A_GD
+GROUP BY [OT_PTLZ_A_GD].[id], [OT_PTLZ_A_GD].[gatunekDrzew]
+HAVING (((Count(OT_PTLZ_A_GD.id))&gt;1) AND ((Count(OT_PTLZ_A_GD.gatunekDrzew))&gt;1));
+
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>50</Numer>
+    <Nazwa>K11_SKJZ_pow_skdr=inapl</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKJZ_L SET OT_SKJZ_L.skdr_l1 = 'inapplicable'
+WHERE [OT_SKJZ_L].[skdr_l1]='';
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>47</Numer>
+    <Nazwa>K08_SKJZ_update_dla_LU</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKJZ_L SET OT_SKJZ_L.szerNawierzchni = 'inapplicable', OT_SKJZ_L.x_katDoklGeom = 'Prz'
+WHERE ((([OT_SKJZ_L].[x_rodzajReprGeom])='LU'));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>48</Numer>
+    <Nazwa>K09_SKJZ_szer_kor=inapl</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SKJZ_L SET OT_SKJZ_L.szerKoronyDrogi = 'inapplicable'
+WHERE [OT_SKJZ_L].[szerKoronyDrogi]='' Or [OT_SKJZ_L].[x_rodzajReprGeom]='LU';
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>45</Numer>
+    <Nazwa>K06_SWKN_aktualizacja_inappl</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SWKN_L SET OT_SWKN_L.szerokosc = 'inapplicable'
+WHERE ((([OT_SWKN_L].[szerokosc]) Is Null)) Or ((([OT_SWKN_L].[polozenie])='-1')) Or ((([OT_SWKN_L].[x_rodzajReprGeom])='SL'));
+</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>46</Numer>
+    <Nazwa>K07_SWRS_aktualizacja_inappl</Nazwa>
+    <Opis />
+    <Sql>UPDATE OT_SWRS_L SET OT_SWRS_L.szerokosc = 'inapplicable'
+WHERE ((([OT_SWRS_L].[szerokosc]) Is Null)) Or ((([OT_SWRS_L].[polozenie])='-1')) Or ((([OT_SWRS_L].[x_rodzajReprGeom])='SL'));
+
+</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

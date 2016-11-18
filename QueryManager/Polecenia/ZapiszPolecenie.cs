@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-
+using QueryManager.Domena.Repozytoria;
 using QueryManager.Domena;
+using QueryManager.Domena.Repozytoria.Xml;
 
 namespace QueryManager.Polecenia
 {
@@ -16,7 +17,8 @@ namespace QueryManager.Polecenia
 
         public override void Wykonaj()
         {
-            RepozytoriumReader.Zapisz(_form.NazwaRepozytorium, _form.Repozytorium);
+            var writer = new KwerendyXmlWriter(_form.Repozytorium);
+            writer.ZapiszZmiany(_form.NazwaRepozytorium);
             _form.EnableZapisz(false);
         }
     }

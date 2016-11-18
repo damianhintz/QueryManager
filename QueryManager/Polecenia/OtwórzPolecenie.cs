@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using QueryManager.Domena;
+using QueryManager.Domena.Repozytoria;
+using QueryManager.Domena.Repozytoria.Xml;
 
 namespace QueryManager.Polecenia
 {
@@ -28,8 +30,10 @@ namespace QueryManager.Polecenia
         {
             try
             {
-                var repozytorium = RepozytoriumReader.Wczytaj(fileName);
-                _form.PrzygotujNoweRepozytorium(fileName, repozytorium);
+                var repo = new RepozytoriumKwerend();
+                var reader = new KwerendyXmlReader(repo);
+                reader.Wczytaj(fileName);
+                _form.PrzygotujNoweRepozytorium(fileName, repo);
                 _form.EnableNowaKwerenda(true);
                 _form.EnableZamknij(true);
                 _form.EnableZapisz(false);

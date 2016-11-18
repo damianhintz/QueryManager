@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using QueryManager.Domena;
+using QueryManager.Domena.Encje;
 
 namespace QueryManager.Widok
 {
