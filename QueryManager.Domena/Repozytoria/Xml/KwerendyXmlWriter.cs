@@ -5,15 +5,15 @@ using QueryManager.Domena.Abstrakcje;
 namespace QueryManager.Domena.Repozytoria.Xml
 {
     /// <summary>
-    /// Fabryka repozytorium kwerend.
+    /// Czytnik kwerend z pliku xml.
     /// </summary>
     public class KwerendyXmlWriter : IKwerendyWriter
     {
-        RepozytoriumKwerend repozytorium;
+        RepozytoriumKwerend _repo;
         
         public KwerendyXmlWriter(RepozytoriumKwerend repozytorium)
         {
-            this.repozytorium = repozytorium;
+            _repo = repozytorium;
         }
         
         public void ZapiszZmiany(string nazwaPliku)
@@ -21,7 +21,7 @@ namespace QueryManager.Domena.Repozytoria.Xml
             using (var writer = new StreamWriter(nazwaPliku))
             {
                 var serializer = new XmlSerializer(typeof(RepozytoriumKwerend));
-                serializer.Serialize(writer, repozytorium);
+                serializer.Serialize(writer, _repo);
             }
         }
     }

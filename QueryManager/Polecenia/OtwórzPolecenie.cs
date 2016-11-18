@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using QueryManager.Domena;
 using QueryManager.Domena.Repozytoria;
 using QueryManager.Domena.Repozytoria.Xml;
+using QueryManager.Domena.Rozszerzenia;
 
 namespace QueryManager.Polecenia
 {
@@ -14,8 +15,8 @@ namespace QueryManager.Polecenia
             : base(form)
         {
             _openFileDialog = new OpenFileDialog();
-            _openFileDialog.Title = "Otwórz plik";
-            _openFileDialog.Filter = "*.xml|*.xml";
+            _openFileDialog.Title = "Importuj kwerendy";
+            _openFileDialog.Filter = "Pliki XML (*.xml)|*.xml|Pliki tekstowe (*.txt)|*.txt";
             _openFileDialog.Multiselect = false;
         }
 
@@ -31,7 +32,7 @@ namespace QueryManager.Polecenia
             try
             {
                 var repo = new RepozytoriumKwerend();
-                var reader = new KwerendyXmlReader(repo);
+                var reader = fileName.CreateQueryReader(repo);
                 reader.Wczytaj(fileName);
                 _form.PrzygotujNoweRepozytorium(fileName, repo);
                 _form.EnableNowaKwerenda(true);

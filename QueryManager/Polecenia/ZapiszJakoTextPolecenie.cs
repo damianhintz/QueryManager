@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using QueryManager.Domena;
-using QueryManager.Domena.Repozytoria.Xml;
+using QueryManager.Domena.Repozytoria.Text;
 
 namespace QueryManager.Polecenia
 {
-    class ZapiszJakoPolecenie : AbstrakcyjnePolecenie
+    class ZapiszJakoTextPolecenie : AbstrakcyjnePolecenie
     {
         private SaveFileDialog _saveFileDialog;
 
-        public ZapiszJakoPolecenie(MainForm form)
+        public ZapiszJakoTextPolecenie(MainForm form)
             : base(form)
         {
             _saveFileDialog = new SaveFileDialog();
             _saveFileDialog.Title = "Zapisz";
-            _saveFileDialog.Filter = "Pliki XML (*.xml)|*.xml";
+            _saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt";
             _saveFileDialog.FileName = _form.NazwaRepozytorium;
         }
 
@@ -26,7 +26,7 @@ namespace QueryManager.Polecenia
             DialogResult result = _saveFileDialog.ShowDialog(_form);
             if (result != DialogResult.OK) return;
 
-            var writer = new KwerendyXmlWriter(_form.Repozytorium);
+            var writer = new KwerendyTextWriter(_form.Repozytorium);
             writer.ZapiszZmiany(_saveFileDialog.FileName);
             _form.PrzygotujNoweRepozytorium(_saveFileDialog.FileName, _form.Repozytorium);
 

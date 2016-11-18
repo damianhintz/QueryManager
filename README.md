@@ -1,29 +1,42 @@
-QueryManager v1.2, 22 grudnia 2015
+QueryManager v1.3-beta, 18 listopada 2016
 ---
-Zarządca kwerend
+Zarządca kwerend w bazie danych Access
 
-# Nowe funkcje:
+# Cechy
 
-* kwerendy do HYDRO
-* kwerendy do VMAP
-* kwerendy do TBD
+* obsługa bazy danych Access
+* kwerendy do HYDRO (Access)
+* kwerendy do VMAP (Access)
+* kwerendy do TBD (Access)
+* kwerendy do PROTO (Access)
 
 # Historia
 
 Do zrobienia
 
 * [ ] podręcznik użytkownika
-* [ ] optymalizacja odczytu kwerend z pliku (json lub txt)
-* [ ] generator kwerend na podstawie szablonu
+* [ ] obsługa baz danych SQL Server i Oracle
+* [ ] odczyt i zapis kwerend z pliku json
+
+2016-11-18 v1.3-beta
+
+* nowość: generator kwerend na podstawie szablonu
+* nowość: import kwerend z pliku tekstowego
+* nowość: eksport kwerend do pliku tekstowego
+* ulepszone: widok kwerend szybciej wczytuje dużą liczbę pozycji
 
 2015-12-22 v1.2
 
-* nowa funkcja: skrypt do konwersji HYDRO: ALTER TABLE OT_* ALTER COLUMN ? TEXT(250);
+* nowość: skrypt do konwersji HYDRO: ALTER TABLE OT_* ALTER COLUMN ? TEXT(250);
 
 2015-07-13 v1.1 (QueryManager)
 
-* nowa funkcja: kwerendy do VAMP (zamiana na duże litery)
+* nowość: kwerendy do VAMP (zamiana na duże litery)
 
 2013-01-11 v1.0 (TbdQueryManager)
 
-* nowa funkcja: kwerendy do TBD
+* nowość: kwerendy do TBD
+
+2013-01-07 v1.0-alfa
+
+* propozycja projektu

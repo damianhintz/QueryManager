@@ -14,9 +14,8 @@ namespace QueryManager.Polecenia
             MessageBox.Show(_form,
                 string.Format("{0} - Zarządca kwerend\n" +
                 "Wersja: {1}\n" +
-                "Data publikacji: 22 grudnia 2015\n" +
-                "@2013-2015 OPGK Olsztyn. Wszelkie prawa zastrzeżone.\n" +
-                "Licencję na ten produkt posiada:\nOPGK Olszyn",
+                "Data publikacji: 18 listopada 2016\n" +
+                "@ 2013-2016 Damian Hintz.\nWszelkie prawa zastrzeżone.",
                 Application.ProductName, Application.ProductVersion),
                 "Informacje o QueryManager",
                 MessageBoxButtons.OK,

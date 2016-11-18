@@ -13,7 +13,6 @@ namespace QueryManager.Widok
             get { return _kwerenda; }
             set
             {
-                //Aktualizacja pól.
                 _kwerenda.Numer = SubItems[0].Text = value.Numer;
                 _kwerenda.Nazwa = SubItems[1].Text = value.Nazwa;
                 _kwerenda.Opis = SubItems[2].Text = value.Opis;

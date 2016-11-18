@@ -8,6 +8,7 @@ using QueryManager.Widok;
 using QueryManager.Polecenia;
 using QueryManager.Domena.Repozytoria;
 using QueryManager.Domena.Encje;
+using System.Text;
 
 namespace QueryManager
 {
@@ -21,7 +22,8 @@ namespace QueryManager
         private ImportujKwerendyPolecenie _importujKwerendy;
         private ZamknijPolecenie _zamknij;
         private ZapiszPolecenie _zapisz;
-        private ZapiszJakoPolecenie _zapiszJako;
+        private ZapiszJakoPolecenie _zapiszJakoXml;
+        private ZapiszJakoTextPolecenie _zapiszJakoText;
         private ZakończPolecenie _zakończ;
         //Kwerenda
         private EdytorPolecenie _edytor;
@@ -37,14 +39,16 @@ namespace QueryManager
         public string NazwaRepozytorium { get { return _nazwaRepozytorium; } }
 
         public bool CzyZmodyfikowanoRepozytorium { get { return zapiszMenuItem.Enabled; } }
+        KwerendyListView _view;
 
         public MainForm(string baza)
         {
             Baza = baza;
             InitializeComponent();
-            InicjowaniePolecen();
-            BindowaniePolecen();
+            InicjowaniePoleceń();
+            BindowaniePoleceń();
             Text = GetTitle();
+            _view = new KwerendyListView(kwerendyView, _repozytorium);
         }
 
         string GetTitle()
@@ -53,7 +57,7 @@ namespace QueryManager
             return string.Format("{0} ({1})", Application.ProductName, Baza);
         }
 
-        void InicjowaniePolecen()
+        void InicjowaniePoleceń()
         {
             _nowyPlik = new NowyPlikPolecenie(this);
             _otwórz = new OtwórzPolecenie(this);
@@ -61,7 +65,8 @@ namespace QueryManager
             _importujKwerendy = new ImportujKwerendyPolecenie(this);
             _zamknij = new ZamknijPolecenie(this);
             _zapisz = new ZapiszPolecenie(this);
-            _zapiszJako = new ZapiszJakoPolecenie(this);
+            _zapiszJakoXml = new ZapiszJakoPolecenie(this);
+            _zapiszJakoText = new ZapiszJakoTextPolecenie(this);
             _zakończ = new ZakończPolecenie(this);
             _edytor = new EdytorPolecenie(this);
             _usuń = new UsuńPolecenie(this);
@@ -72,7 +77,7 @@ namespace QueryManager
         /// <summary>
         /// Przypisuje do atrybutu <code>Tag</code> konkretny obiekt PolecenieBase.
         /// </summary>
-        void BindowaniePolecen()
+        void BindowaniePoleceń()
         {
             nowyPlikMenuItem.Tag = _nowyPlik;
             otwórzPlikMenuItem.Tag = _otwórz;
@@ -82,7 +87,8 @@ namespace QueryManager
             dodajKontekstToolStripMenuItem.Tag = _nowaKwerenda;
             zamknijMenuItem.Tag = _zamknij;
             zapiszMenuItem.Tag = _zapisz;
-            zapiszJakoMenuItem.Tag = _zapiszJako;
+            eksportujXmlMenuItem.Tag = _zapiszJakoXml;
+            eksportujTekstowyMenuItem.Tag = _zapiszJakoText;
             zakończMenuItem.Tag = _zakończ;
             zmieńMenuItem.Tag = _edytor;
             zmienKontekstToolStripMenuItem.Tag = _edytor;
@@ -100,9 +106,10 @@ namespace QueryManager
         /// <param name="repozytorium"></param>
         public void PrzygotujNoweRepozytorium(string nazwaPliku, RepozytoriumKwerend repozytorium)
         {
+            kwerendyView.VirtualListSize = 0;
+            //kwerendyView.Items.Clear();
             _nazwaRepozytorium = nazwaPliku;
             _repozytorium = repozytorium;
-            kwerendyView.Items.Clear();
             string title = GetTitle();
             if (string.IsNullOrEmpty(nazwaPliku))
             {
@@ -111,34 +118,21 @@ namespace QueryManager
             else
             {
                 Text = nazwaPliku + " - " + title;
-                foreach (var q in repozytorium) AddQueryItem(q);
+                //foreach (var q in repozytorium) AddQueryItem(q);
+                _view.Kwerendy = _repozytorium;
+                kwerendyView.VirtualListSize = _repozytorium.Count;
             }
         }
-
-        /// <summary>
-        /// Dodaj nową kwerendę do repozytorium.
-        /// </summary>
-        /// <param name="kwerenda"></param>
-        public void DodajKwerendę(Kwerenda kwerenda)
+        
+        public void DodajKwerendę(Kwerenda q)
         {
-            _repozytorium.Dodaj(kwerenda);
-            AddQueryItem(kwerenda);
-        }
-
-        void AddQueryItem(Kwerenda kwerenda)
-        {
-            kwerendyView.Items.Add(new KwerendaListViewItem(kwerenda));
+            _repozytorium.Dodaj(q);
+            kwerendyView.VirtualListSize = _repozytorium.Count;
         }
 
         internal void UsuńKwerendę(KwerendaListViewItem item)
         {
             _repozytorium.Usuń(item.Kwerenda);
-            //Trzeba odświeżyć listę z repozytorium!
-            //Nie wystarczy usunąć pozycji z listy, jeżeli na liście są dwie
-            //identyczne kwerendy to zostanie usunięta pierwsza znaleziona,
-            //a użytkownik mógł wybrać pozycję znajdującą się dalej na liście.
-            //Jeżeli użytkownik będzie później edytował kwerendę nie zostanie ona
-            //zapisana do repozytorium, bo została wcześniej usunięta.
             PrzygotujNoweRepozytorium(_nazwaRepozytorium, _repozytorium);
         }
 
@@ -153,11 +147,7 @@ namespace QueryManager
         public void EnableZapisz(bool enable) { zapiszMenuItem.Enabled = enable; }
         public void EnableZapiszJako(bool enable) { zapiszJakoMenuItem.Enabled = enable; }
         public void ZapiszZmianyPrzedZamknieciem() { _zapisz.Wykonaj(); }
-
-        /// <summary>
-        /// Wykonaj polecenie powiązane z wybraną pozycją w menu.
-        /// </summary>
-        /// <param name="sender"></param>
+        
         private void WykonajPolecenie(ToolStripMenuItem sender)
         {
             if (sender == null) return;
@@ -179,7 +169,8 @@ namespace QueryManager
 
         internal KwerendaListViewItem WybranaKwerenda()
         {
-            foreach (KwerendaListViewItem item in kwerendyView.SelectedItems) return item;
+            foreach (int index in kwerendyView.SelectedIndices)
+                return kwerendyView.Items[index] as KwerendaListViewItem;
             return null;
         }
 
@@ -205,6 +196,43 @@ namespace QueryManager
         private void zaznaczWszystkoMenuItem_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in kwerendyView.Items) item.Selected = true;
+        }
+
+        private void generatorKwerendMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryItem = WybranaKwerenda();
+            if (queryItem == null) return;
+            var open = new OpenFileDialog();
+            open.Filter = "Pliki tekstowe (*.tab)|*.tab";
+            var result = open.ShowDialog(this);
+            if (result != DialogResult.OK) return;
+            var templateQuery = queryItem.Kwerenda;
+            var templateSql = templateQuery.Sql;
+            //Wybierz plik zmiennych *.tab
+            var fileName = open.FileName;
+            var records = File.ReadAllLines(fileName, Encoding.GetEncoding(1250));
+            int index = 1;
+            foreach(var record in records)
+            {
+                var pola = record.Split('\t');
+                var sql = templateSql;
+                for(int i = 0; i < pola.Length; i++)
+                {
+                    var zmienna = "[" + i + "]"; //[0], [1], [2], ...
+                    var wartość = pola[i];
+                    sql = sql.Replace(zmienna, wartość);
+                }
+                var query = new Kwerenda
+                {
+                    Numer = index.ToString(),
+                    Nazwa = templateQuery.Nazwa,
+                    Opis = templateQuery.Opis,
+                    Sql = sql
+                };
+                _repozytorium.Dodaj(query);
+                index++;
+            }
+            kwerendyView.VirtualListSize = _repozytorium.Count;
         }
     }
 }

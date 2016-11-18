@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Polecenia\ImportujKwerendyPolecenie.cs" />
+    <Compile Include="Polecenia\ZapiszJakoTextPolecenie.cs" />
     <Compile Include="Widok\BazaListViewItem.cs" />
     <Compile Include="Widok\EdytorBazy.cs">
       <SubType>Form</SubType>
@@ -83,6 +84,7 @@
     <Compile Include="Polecenia\ZapiszJakoPolecenie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widok\KwerendyListView.cs" />
     <EmbeddedResource Include="Widok\EdytorBazy.resx">
       <DependentUpon>EdytorBazy.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +141,9 @@
     <None Include="Samples\TBD\tbd.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Samples\HYDRO\HYDRO.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Samples\PROTO\bdot10k.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -5,7 +5,7 @@ using QueryManager.Domena.Abstrakcje;
 namespace QueryManager.Domena.Repozytoria.Xml
 {
     /// <summary>
-    /// Fabryka repozytorium kwerend.
+    /// Zapisuje kwerendy do pliku xml.
     /// </summary>
     public class KwerendyXmlReader : IKwerendyReader
     {
