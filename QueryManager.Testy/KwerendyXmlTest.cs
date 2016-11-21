@@ -14,8 +14,6 @@ namespace QueryManager.Testy
     [TestClass]
     public class KwerendyXmlTest
     {
-        string _samplesPath = @"..\..\Samples";
-
         [TestMethod]
         public void Repozytorium_ShouldBeEmpty()
         {
@@ -75,7 +73,7 @@ namespace QueryManager.Testy
         {
             var repo = new RepozytoriumKwerend();
             foreach (var k in kwerendy) repo.Dodaj(k);
-            var path = Path.Combine(_samplesPath, fileName);
+            var path = fileName;
             var writer = path.CreateQueryWriter(repo);
             writer.ZapiszZmiany(path);
             repo.Count.ShouldBe(kwerendy.Length);
@@ -85,7 +83,7 @@ namespace QueryManager.Testy
         RepozytoriumKwerend ReadRepo(string fileName)
         {
             var repo = new RepozytoriumKwerend();
-            var path = Path.Combine(_samplesPath, fileName);
+            var path = fileName;
             //var reader = new KwerendyXmlReader(repo);
             var reader = path.CreateQueryReader(repo);
             reader.Wczytaj(path);

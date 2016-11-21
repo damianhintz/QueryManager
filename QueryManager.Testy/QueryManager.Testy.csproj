@@ -77,11 +77,6 @@
     </Content>
     <Content Include="Samples\tbd.xml" />
     <Content Include="Samples\tbdq.xml" />
-    <Content Include="Samples\test.xml" />
-    <Content Include="Samples\test1.xml" />
-    <Content Include="Samples\test_puste.xml" />
-    <Content Include="Samples\test_szukaj.xml" />
-    <Content Include="Samples\test_zapisz.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
