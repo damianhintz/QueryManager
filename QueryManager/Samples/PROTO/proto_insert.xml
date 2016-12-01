@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Numer />
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO [0] SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].[0];</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>1</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO attribute_catalog SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].attribute_catalog;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>2</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO BDOT10k_karto SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].BDOT10k_karto;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>3</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO BDOT10k_skroty SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].BDOT10k_skroty;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>4</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO BDOT10k_styk SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].BDOT10k_styk;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>5</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO feature SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].feature;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>6</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO feature_values SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].feature_values;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>7</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO GML_ATTRIBUTE SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].GML_ATTRIBUTE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>8</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO GML_KARTO_ZAOK SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].GML_KARTO_ZAOK;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>9</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO GML_METADANE SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].GML_METADANE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>10</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO GML_PREFIX SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].GML_PREFIX;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>11</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO GML_UPDATE SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].GML_UPDATE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>12</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>13</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto_clipp SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto_clipp;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>14</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto_clipp_war SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto_clipp_war;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>15</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto_extend SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto_extend;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>16</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto_mask SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto_mask;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>17</Numer>
+    <Nazwa>insert into table</Nazwa>
+    <Opis>kopiuj dane z innej bazy</Opis>
+    <Sql>INSERT INTO karto_szer SELECT * FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].karto_szer;</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

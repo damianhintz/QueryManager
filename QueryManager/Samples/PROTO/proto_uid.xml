@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Numer />
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE [0] ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>1</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE attribute_catalog ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>2</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE BDOT10k_karto ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>3</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE BDOT10k_skroty ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>4</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE BDOT10k_styk ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>5</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE feature ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>6</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE feature_values ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>7</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE GML_ATTRIBUTE ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>8</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE GML_KARTO_ZAOK ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>9</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE GML_METADANE ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>10</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE GML_PREFIX ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>11</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE GML_UPDATE ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>12</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>13</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto_clipp ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>14</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto_clipp_war ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>15</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto_extend ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>16</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto_mask ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>17</Numer>
+    <Nazwa>add uid [0]</Nazwa>
+    <Opis>dodaj klucz główny</Opis>
+    <Sql>ALTER TABLE karto_szer ADD COLUMN UID AUTOINCREMENT PRIMARY KEY;</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

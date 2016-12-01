@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKwerenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kwerenda>
+    <Numer />
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM [0];</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>1</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM attribute_catalog;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>2</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM BDOT10k_karto;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>3</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM BDOT10k_skroty;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>4</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM BDOT10k_styk;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>5</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM feature;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>6</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM feature_values;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>7</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM GML_ATTRIBUTE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>8</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM GML_KARTO_ZAOK;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>9</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM GML_METADANE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>10</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM GML_PREFIX;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>11</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM GML_UPDATE;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>12</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>13</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto_clipp;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>14</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto_clipp_war;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>15</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto_extend;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>16</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto_mask;</Sql>
+  </Kwerenda>
+  <Kwerenda>
+    <Numer>17</Numer>
+    <Nazwa>DELETE FROM TABLE</Nazwa>
+    <Opis>Wyczyść dane tabeli</Opis>
+    <Sql>DELETE FROM karto_szer;</Sql>
+  </Kwerenda>
+</ArrayOfKwerenda>

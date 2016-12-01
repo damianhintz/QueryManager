@@ -1,9 +1,0 @@
-﻿# kopiowanie z tabeli do tabeli
-INSERT INTO attribute_catalog 
-SELECT * 
-FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].[attribute_catalog];
-
-# tworzenie tabeli z tabeli
-# SELECT field1[, field2[, …]] INTO newtable [IN externaldatabase] FROM source
-SELECT * INTO attribute_catalog
-FROM [c:\Users\dhintz\Downloads\_baza_proto\bdot10k.mdb].[attribute_catalog];

@@ -14,7 +14,7 @@ namespace QueryManager.Polecenia
             MessageBox.Show(_form,
                 string.Format("{0} - Zarządca kwerend\n" +
                 "Wersja: {1}\n" +
-                "Data publikacji: 18 listopada 2016\n" +
+                "Data publikacji: 1 grudnia 2016\n" +
                 "@ 2013-2016 Damian Hintz.\nWszelkie prawa zastrzeżone.",
                 Application.ProductName, Application.ProductVersion),
                 "Informacje o QueryManager",

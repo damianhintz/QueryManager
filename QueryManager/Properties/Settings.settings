@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DefaultRepo" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Samples\HYDRO\HYDRO.xml</Value>
+      <Value Profile="(Default)">Samples\PROTO\proto_delete.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

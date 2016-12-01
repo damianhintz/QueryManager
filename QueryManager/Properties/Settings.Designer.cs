@@ -25,7 +25,7 @@ namespace QueryManager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Samples\\HYDRO\\HYDRO.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Samples\\PROTO\\proto_delete.xml")]
         public string DefaultRepo {
             get {
                 return ((string)(this["DefaultRepo"]));

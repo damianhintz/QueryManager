@@ -1,4 +1,4 @@
-QueryManager v1.3-beta, 18 listopada 2016
+QueryManager v1.4-beta, 1 grudnia 2016
 ---
 Zarządca kwerend w bazie danych Access
 
@@ -17,6 +17,13 @@ Do zrobienia
 * [ ] podręcznik użytkownika
 * [ ] obsługa baz danych SQL Server i Oracle
 * [ ] odczyt i zapis kwerend z pliku json
+
+2016-12-01 v1.4-beta
+
+* nowość: kwerendy proto do kopiowania tabel między bazami
+* nowość: kwerendy proto do usuwania tabel
+* nowość: kweredny proto do dodawania kolumny uid z kluczem głównym
+* poprawione: wykonywanie wybranych kwerend
 
 2016-11-18 v1.3-beta
 

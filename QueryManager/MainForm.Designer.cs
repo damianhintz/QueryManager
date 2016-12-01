@@ -486,7 +486,7 @@
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Text = "QueryManager v1.3-beta - Zarządca kwerend  (18 listopada 2016)";
+            this.Text = "QueryManager v1.4-beta - Zarządca kwerend  (1 grudnia 2016)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);

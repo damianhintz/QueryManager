@@ -113,12 +113,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Samples\PROTO\proto_delete.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Samples\PROTO\proto_insert.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="Samples\PROTO\proto_delete.json" />
+    <None Include="Samples\PROTO\proto_insert.json" />
     <None Include="Samples\VMAP\n33058cd_v4.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -135,6 +131,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccdbMerge.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Samples\HYDRO\HYDRO.SQL">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -147,7 +146,17 @@
     <Content Include="Samples\PROTO\bdot10k.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Samples\PROTO\Templates.txt" />
+    <Content Include="Samples\PROTO\proto_delete.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\PROTO\proto_insert.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\PROTO\proto_uid.xml" />
+    <Content Include="Samples\PROTO\sql_templates.txt" />
+    <None Include="Samples\PROTO\proto_tables.tab">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="Samples\VMAP\Schemat\Bagno_trzes_ABH095.sql" />
     <Content Include="Samples\VMAP\Schemat\Bagno_trzes_PBH095.sql" />
     <Content Include="Samples\VMAP\Schemat\Bocznica_sl_LAN050.sql" />

@@ -123,7 +123,7 @@ namespace QueryManager
                 kwerendyView.VirtualListSize = _repozytorium.Count;
             }
         }
-        
+
         public void DodajKwerendę(Kwerenda q)
         {
             _repozytorium.Dodaj(q);
@@ -147,7 +147,7 @@ namespace QueryManager
         public void EnableZapisz(bool enable) { zapiszMenuItem.Enabled = enable; }
         public void EnableZapiszJako(bool enable) { zapiszJakoMenuItem.Enabled = enable; }
         public void ZapiszZmianyPrzedZamknieciem() { _zapisz.Wykonaj(); }
-        
+
         private void WykonajPolecenie(ToolStripMenuItem sender)
         {
             if (sender == null) return;
@@ -177,7 +177,11 @@ namespace QueryManager
         internal Kwerenda[] WybraneKwerendy()
         {
             List<Kwerenda> kwerendy = new List<Kwerenda>();
-            foreach (KwerendaListViewItem item in kwerendyView.SelectedItems) kwerendy.Add(item.Kwerenda);
+            foreach (int index in kwerendyView.SelectedIndices)
+            {
+                var item = kwerendyView.Items[index] as KwerendaListViewItem;
+                kwerendy.Add(item.Kwerenda);
+            }
             return kwerendy.ToArray();
         }
 
@@ -195,7 +199,7 @@ namespace QueryManager
 
         private void zaznaczWszystkoMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in kwerendyView.Items) item.Selected = true;
+            for (int i = 0; i < kwerendyView.VirtualListSize; i++) kwerendyView.SelectedIndices.Add(i);
         }
 
         private void generatorKwerendMenuItem_Click(object sender, EventArgs e)
@@ -212,11 +216,11 @@ namespace QueryManager
             var fileName = open.FileName;
             var records = File.ReadAllLines(fileName, Encoding.GetEncoding(1250));
             int index = 1;
-            foreach(var record in records)
+            foreach (var record in records)
             {
                 var pola = record.Split('\t');
                 var sql = templateSql;
-                for(int i = 0; i < pola.Length; i++)
+                for (int i = 0; i < pola.Length; i++)
                 {
                     var zmienna = "[" + i + "]"; //[0], [1], [2], ...
                     var wartość = pola[i];
